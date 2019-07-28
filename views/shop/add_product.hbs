@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
+            {{ addedMsg }}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+    <form method="post" action="/add_product" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control"  placeholder="Product Title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="Price">Price</label>
+            <input type="number" class="form-control"  placeholder="Price" name="price">
+        </div>
+        <div class="form-group">
+            <label for="Color">Color</label>
+            <input type="text" class="form-control"  placeholder="Color" name="color">
+        </div>
+        <div class="form-group">
+            <label for="Materila">Material</label>
+            <input type="text" class="form-control"  placeholder="Material" name="material">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" name="productImage">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <!--<div class="form-group">
+            <label for="image">File input</label>
+            <input type="text" class="form-control" name="imagePath">
+        </div>-->
+        <label for="description">Description</label>
+        <textarea class="form-control" rows="3" name="description"></textarea>
+        <button type="submit" class="btn btn-default">Add Product</button>
+    </form>
+    </div>
+</div>

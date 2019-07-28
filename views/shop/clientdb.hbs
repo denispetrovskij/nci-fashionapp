@@ -1,0 +1,31 @@
+<!--<title>Img Gallery</title>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1> <i class="fa fa-camera-retro"></i> Welcome To Our Clients Gallery</h1>
+        <p>here are the images!</p>
+    </div>
+{# each clients }}
+    <div class="row">
+    {# each this }}
+        <div class="col-lg-4 col-sm-6">
+            <div class="thumbnail">
+                <img src="{ this.clientImagePath }}" alt="..." class="img-responsive">
+            </div>
+        </div>
+    {/each}}
+    </div>
+{/each}}-->
+{{# each clients }}
+<div class="tripple">
+{{# each this }}
+    <div class="boximg">
+        <a href="/product-view/{{this.productid}}"><img src="{{ this.clientImagePath }}" /></a>
+        <p>{{ this._id }}</p>
+    </div>
+{{/each}}
+</div>
+{{/each}}
+
+
+

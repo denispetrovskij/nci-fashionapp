@@ -1,0 +1,54 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+        <div class="row">
+
+
+                <div class="col-md-8">
+                    <!-- begin macbook pro mockup -->
+                    <div class="md-macbook-pro md-glare">
+                        <div class="md-lid">
+                            <div class="md-camera"></div>
+                            <div class="md-screen">
+                                <div class="tab-featured-image">
+                                    <div class="tab-content">
+                                        <img src="../{{product.imagePath}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-4">
+                <!-- begin panel group -->
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                    <span class="side-tab" data-target="#tab2" data-toggle="tab" role="tab" aria-expanded="false">
+                        <h6>Upload ID: {{product._id}}</h6>
+                    </span>
+                    </div>
+                    <div class="panel panel-default">
+                        <h6>Title: {{product.title}}</h6>
+                        </span>
+                    </div>
+                    <div class="panel panel-default">
+                        <h6>Description: {{product.description}}</h6>
+                        </span>
+                    </div>
+                    <div class="panel panel-default">
+                        <h6>Price: ${{product.price}}</h6>
+                        </span>
+                    </div>
+                    <div class="panel panel-success">
+                        <a href="/add-to-cart/{{product._id}}" class="panel-heading btn btn-success btn-lg btn-block">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

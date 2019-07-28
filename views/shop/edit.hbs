@@ -1,0 +1,30 @@
+<br><br><br><br><br><br><br><br><br><br>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+    <form method="post" action="/edit/{{product._id}}" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="input-group-addon">{{product._id}}</div>
+            <br><br>
+            <label for="Title">Title</label>
+            <input type="text" class="form-control"  placeholder="Product Title" name="title" value="{{product.title}}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="Price">Price $</label>
+            <input type="number" class="form-control"  placeholder="Price" name="price" value="{{product.price}}">
+        </div>
+        <br>
+        <label for="description">Description</label>
+        <textarea class="form-control" rows="3" name="description">{{product.description}}</textarea>
+        <br><br>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" name="productImage">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <br><br>
+        <button type="submit" class="btn btn-warning">Update Product</button>
+    </form>
+    </div>
+</div>
+    <br><br><br><br><br><br><br><br><br><br>

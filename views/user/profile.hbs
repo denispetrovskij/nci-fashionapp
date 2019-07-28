@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
+            {{ photoMsg }}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Profile</h1>
+        <hr>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="list-group">
+                    <h2>{{ user.email }}</h2>
+                    <h4>{{ user._id }}</h4>
+                </ul>
+            </div>
+        </div>
+        <h2>My Orders</h2>
+        {{# each orders}}
+        <div class="panel panel-default">
+            {{# each this.items }}
+            <div class="panel-body">
+                <ul class="list-group">
+                    <form method="post" action="/client_upload/{{this.item._id}}" enctype="multipart/form-data">
+                        <li class="list-group-item">
+                            <span class="badge">{{ this.price }}</span>
+                            {{ this.item.title }} | {{ this.item._id}} | {{ this.qty }} Units
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-group">
+                                <label for="exampleInputFile">File input</label>
+                                <input type="file" name="customerImage" class="btn btn-primary btn-xs">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <button type="submit" class="btn btn-warning btn-xs">Upload Photo</button>
+                        </li>
+                    </form>
+
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <strong>Total Price: ${{ this.cart.totalPrice }}</strong>
+            </div>
+                    {{/each}}
+
+        </div>
+        {{/each}}
+    </div>
+</div>

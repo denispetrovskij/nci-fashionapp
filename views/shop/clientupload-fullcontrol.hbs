@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Client Upload Data Management</h3>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped">
+                    <thead>
+                    <th>Upload ID</th>
+                    <th>Product ID</th>
+                    <th>User</th>
+                    <th>Status</th>
+                    <th>Image Link</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>Approve</th>
+                    <th>Disapprove</th>
+                    </thead>
+        {{# each clients }}
+                    <tbody>
+                        {{# each this }}
+                    <tr>
+                        <td>{{ this._id}}</td>
+                        <td>{{ this.productid}}</td>
+                        <td>{{ this.user}}</td>
+                        <td>{{ this.isApproved}}</td>
+                        <td><a href="{{this.clientImagePath}}" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"><span class="glyphicon glyphicon-link"></span></button></a></td>
+                        <td><a href="/edit/{{this._id}}" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                        <td><a href="/delete-upload/{{this._id}}" data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                        <td><a href="/approve/{{this._id}}" data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-success btn-xs" data-title="Delete" data-toggle="modal"><span class="glyphicon glyphicon-ok"></span></button></a></td>
+                        <td><a href="/disapprove/{{this._id}}" data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"><span class="glyphicon glyphicon-remove"></span></button></a></td>
+
+                    </tr>
+                        {{/each}}
+                    </tbody>
+            {{/each}}
+                </table>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
