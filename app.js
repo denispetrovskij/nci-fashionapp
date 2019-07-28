@@ -1,3 +1,5 @@
+var PORT = process.env.PORT || 5000;
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -12,6 +14,8 @@ var flash = require('connect-flash');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
+var favicon = require('favicon');
+
 
 
 
@@ -20,6 +24,10 @@ var userRoutes = require('./routes/user');
 
 
 var app = express();
+
+app.listen(PORT, function() {
+  console.log("app is running");
+});
 
 mongoose.connect('mongodb+srv://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@cluster0-khnuz.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 require('./config/passport');
