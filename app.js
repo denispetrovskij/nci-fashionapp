@@ -1,5 +1,3 @@
-var PORT = process.env.PORT || 5000;
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -16,6 +14,7 @@ var MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
 var favicon = require('favicon');
 
+var PORT = process.env.PORT || 9000;
 
 
 
