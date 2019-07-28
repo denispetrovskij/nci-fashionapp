@@ -8,7 +8,7 @@ var multer = require('multer');
 var User = require('../models/user')
 
 
-require('dotenv').config();
+var dotenv = require('dotenv').config();
 var favicon = require('favicon');
 
 
