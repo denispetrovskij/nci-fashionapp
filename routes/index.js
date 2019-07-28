@@ -1,9 +1,16 @@
+var PORT = process.env.PORT || 5000;
+
 var express = require('express');
 var router = express.Router();
 var Cart = require('../models/cart');
 var Client = require('../models/client_db');
 var multer = require('multer');
 var User = require('../models/user')
+
+
+require('dotenv').config();
+var favicon = require('favicon');
+
 
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
