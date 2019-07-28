@@ -14,7 +14,6 @@ var MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
 var favicon = require('favicon');
 
-var PORT = process.env.PORT || 9000;
 
 
 
@@ -24,9 +23,7 @@ var userRoutes = require('./routes/user');
 
 var app = express();
 
-app.listen(PORT, function() {
-  console.log("app is running");
-});
+
 
 mongoose.connect('mongodb+srv://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@cluster0-khnuz.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 require('./config/passport');

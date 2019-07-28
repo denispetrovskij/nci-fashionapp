@@ -1,5 +1,3 @@
-var PORT = process.env.PORT || 9000;
-
 var express = require('express');
 var router = express.Router();
 var Cart = require('../models/cart');
@@ -13,9 +11,6 @@ var favicon = require('favicon');
 
 var app = express();
 
-app.listen(PORT, function() {
-    console.log("app is running");
-});
 
 
 var storage = multer.diskStorage({
